@@ -39,7 +39,7 @@ function App() {
 export default App;
 
 /*
-  useMemo - Memo : 메모이제이션,
+  useMemo - Memo : 메모이제이션, 자주 쓰이는 값을 Memoization, 즉 캐싱함!
   동일한 값을 리턴하는 함수를 반복적으로 호출 해야 하는 경우, 맨 처음 값을 저장 - 재 선언 하지 않고 꺼내 사용
 
   ★ 함수형 컴포넌트 

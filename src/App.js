@@ -14,7 +14,7 @@ function App() {
   
   // {country : isKorea? '한국' : '일본'};
 
-  // 맨 처음과 location이 바뀔떄만 실행
+  // 맨 처음과 location이 바뀔 시에만 실행
   useEffect(() => {
     console.log('useEffect 호출');
     // 뭔가 오래 소요되는 작업.. 꼭 필요할시에만 호출!
@@ -41,6 +41,13 @@ export default App;
 /*
   useMemo - Memo : 메모이제이션, 자주 쓰이는 값을 Memoization, 즉 캐싱함!
   동일한 값을 리턴하는 함수를 반복적으로 호출 해야 하는 경우, 맨 처음 값을 저장 - 재 선언 하지 않고 꺼내 사용
+
+  Ex) useMemo (() => {
+        return value; 
+      },[item]); // callback 함수 return할 value 값을 Memoization , 
+                    item : 의존성 배열, useMemo는 의존성 배열 안의 index 값이 Update 될때만 Callback 함수 호출 -> 
+                    Memoization 된 값을 다시 Memoization,
+                    만약, 배열 값이 빌 경우 ( [] )는 맨 처음 Component 가 Mount 될때만 값 계산, 이후에는 항상 Memoization 된 값을 꺼내와 사용함.
 
   ★ 함수형 컴포넌트 
 
